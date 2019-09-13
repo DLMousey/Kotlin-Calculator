@@ -21,6 +21,10 @@ sealed class Operator(val x: Long) { // constructor inline?
 
     class Division(x: Long) : Operator(x) {
         override fun calculate(y: Long): Long {
+            if (y.toInt() == 0) {
+                return 80085 // ( ͡° ͜ʖ ͡°)
+            }
+
             return x / y
         }
     }
